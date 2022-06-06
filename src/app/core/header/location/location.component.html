@@ -1,0 +1,5 @@
+<div class="navbar-forecast--location" *ngIf="currentLocation">
+    <span>{{currentLocation.city}} - {{currentLocation.country}}</span>
+    <span>{{currentLocation.temp}}&deg;c</span>
+    <span><img src="{{currentLocation.icon}}" alt=""></span>
+</div>

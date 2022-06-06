@@ -1,0 +1,11 @@
+<div class="navbar-search">
+    <div class="search-icon">
+        <fa-icon [icon]="['fas', 'magnifying-glass']"></fa-icon>
+    </div>
+    <div class="search-form">
+        <form action="" method="get" [formGroup]="form" (ngSubmit)="onSearch()">
+            <input type="text" placeholder="Search" formControlName="location">
+            <button type="submit"></button>
+        </form>
+    </div>
+</div>

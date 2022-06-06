@@ -1,1 +1,16 @@
-<p>header works!</p>
+<section class="header">
+    <nav class="navbar">
+        <div class="navbar-left">
+            <div class="navbar-logo">
+                <fa-icon [icon]="['fas', 'sun']"></fa-icon>
+                <span class="logo-name">Forecast</span>
+            </div>
+            <div class="navbar-location">
+                <app-location></app-location>
+            </div>
+        </div>
+        <div class="navbar-right">
+            <app-search class="app-search"></app-search>
+        </div>
+    </nav>
+</section>

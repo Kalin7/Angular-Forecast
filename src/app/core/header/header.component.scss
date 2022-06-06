@@ -1,0 +1,36 @@
+.header {
+    --logoSize: 36px;
+    max-width: 100%;
+    background-color: #1f1f1f;
+    .navbar {
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 100px;
+        .navbar-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            .navbar-logo fa-icon {
+                font-size: var(--logoSize);
+                color: rgba(241, 211, 10, 0.921);
+            }
+            .logo-name {
+                font-size: var(--logoSize);
+                color: aqua;
+            }
+    
+        }
+       
+        .navbar-right {
+            width: 30%;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            .app-search {
+                width: 100%;
+            }
+        }
+    }
+}
