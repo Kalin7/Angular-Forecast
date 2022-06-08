@@ -38,9 +38,24 @@
         }
     }
 }
-
 @media screen and(max-width: 768px){
     .navbar-bottom--wrapper {
-        display: none;
+        flex-direction: column;
+        .arrows {
+            display: none;
+        }
+        .navbar-bottom--list {
+            flex-direction: column;
+            gap: 0px;
+            width: 100%;
+            .list-item {
+                width: 85%;
+            }
+            a {
+                display: inline-block;
+                width: 100%;
+                text-align: center;
+            }
+        }
     }
 }
