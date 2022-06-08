@@ -1,36 +1,64 @@
+
 .header {
-    --logoSize: 36px;
+    $logosize: 36px;
     max-width: 100%;
     background-color: #1f1f1f;
-    .navbar {
+    position: sticky;
+    .navbar-top {
+        margin: 0 auto;
         padding: 10px;
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 100px;
-        .navbar-left {
+        gap: clamp(10px, 1vw, 100px);
+        .navbar-top--left {
             display: flex;
             align-items: center;
             gap: 20px;
             .navbar-logo fa-icon {
-                font-size: var(--logoSize);
+                font-size: $logosize;
                 color: rgba(241, 211, 10, 0.921);
             }
             .logo-name {
-                font-size: var(--logoSize);
+                font-size: $logosize;
                 color: aqua;
             }
     
         }
        
-        .navbar-right {
-            width: 30%;
+        .navbar-top--right {
+            min-width: 25%;
             display: flex;
             align-items: center;
             gap: 10px;
-            .app-search {
-                width: 100%;
+            app-search {
+                width: 99%;
+                padding: 10px;
+            }
+        }
+    }
+
+    .navbar-bottom {
+        width: 100%;
+        background-color: #ebebeb;
+        app-navbar-bottom {
+            width: 100%;
+            display: block;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navbar-top {
+        flex-direction: column;
+        .navbar-top--left {
+            justify-content: center;
+            .navbar-location {
+                display: none;
             }
         }
     }
 }
+
+
+       
