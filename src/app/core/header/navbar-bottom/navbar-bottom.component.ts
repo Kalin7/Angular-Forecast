@@ -43,7 +43,12 @@ export class NavbarBottomComponent implements OnInit {
     this.parent?.insertBefore(last!, first!);
 
   }
-
+  
+  showMenu(event: any) {
+    event.preventDefault();
+    this.parent?.style.display  == 'block' ? this.parent.style.display = 'none': this.parent!.style.display = 'block';
+  }
+  
   onClick(event: any) {
     event.preventDefault();
     let parent = document.querySelectorAll('.list-item');
