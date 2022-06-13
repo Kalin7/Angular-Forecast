@@ -10,7 +10,8 @@ import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 export class NavbarBottomComponent implements OnInit {
 
   isVisible = false;
-
+  parent!: HTMLElement | null; 
+  
   constructor(
     library: FaIconLibrary
   ) {
@@ -22,6 +23,7 @@ export class NavbarBottomComponent implements OnInit {
 
   ngOnInit(): void {
     this.getWidth();
+    this.parent = document.querySelector('.navbar-bottom--list');
   }
 
   @HostListener('window:resize')
@@ -29,6 +31,18 @@ export class NavbarBottomComponent implements OnInit {
     window.innerWidth < 1200 ? this.isVisible = true : this.isVisible = false;
   }
 
+  forward() {
+    const first = this.parent?.firstChild;
+    this.parent?.removeChild(first!);
+    this.parent?.appendChild(first!);
+  }
+
+  backward() {
+    const first = this.parent?.firstChild;
+    const last = this.parent?.lastChild;
+    this.parent?.insertBefore(last!, first!);
+
+  }
 
   onClick(event: any) {
     event.preventDefault();
@@ -42,8 +56,7 @@ export class NavbarBottomComponent implements OnInit {
           (child as HTMLElement).style.borderBottom = 'none'
       )
     }
-
-
   }
 
 }
+
