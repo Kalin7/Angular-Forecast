@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CoreModule } from './core/core.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FeatureModule } from './feature/feature.module';
 
 @NgModule({
   declarations: [
@@ -19,8 +20,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     FontAwesomeModule,
     CoreModule,
+    FeatureModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
