@@ -6,23 +6,34 @@ import { HeaderComponent } from './header/header.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LocationComponent } from './header/location/location.component';
 import { SearchComponent } from './header/search/search.component';
+import { NavbarBottomComponent } from './header/navbar-bottom/navbar-bottom.component';
+import { MobileMenuComponent } from './header/mobile-menu/mobile-menu.component';
+import { RouterModule } from '@angular/router';
+
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
     LocationComponent,
-    SearchComponent
+    SearchComponent,
+    NavbarBottomComponent,
+    MobileMenuComponent,
   ],
   imports: [
     CommonModule,
     HttpClientModule,
     ReactiveFormsModule,
+    RouterModule,
     FontAwesomeModule
   ],
   exports: [
     HeaderComponent,
-    LocationComponent
+    LocationComponent,
+    SearchComponent,
+    NavbarBottomComponent,
+    MobileMenuComponent,
   ]
 })
 export class CoreModule { }
+
