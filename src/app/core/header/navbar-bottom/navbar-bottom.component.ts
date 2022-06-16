@@ -1,6 +1,7 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit} from '@angular/core';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import { faAngleLeft, faAngleRight, faBars } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-navbar-bottom',
@@ -9,8 +10,11 @@ import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 })
 export class NavbarBottomComponent implements OnInit {
 
-  isVisible = false;
+  isVisibleArrows: boolean = false;
+  isMobileMenu: boolean = true;
   parent!: HTMLElement | null; 
+  
+  @Input() city?: string;
   
   constructor(
     library: FaIconLibrary
@@ -18,6 +22,7 @@ export class NavbarBottomComponent implements OnInit {
     library.addIcons(
       faAngleLeft,
       faAngleRight,
+      faBars
     )
    }
 
@@ -28,7 +33,7 @@ export class NavbarBottomComponent implements OnInit {
 
   @HostListener('window:resize')
   getWidth() {
-    window.innerWidth < 1200 ? this.isVisible = true : this.isVisible = false;
+    window.innerWidth < 1200 ? this.isVisibleArrows = true : this.isVisibleArrows = false;
   }
 
   forward() {
@@ -41,14 +46,9 @@ export class NavbarBottomComponent implements OnInit {
     const first = this.parent?.firstChild;
     const last = this.parent?.lastChild;
     this.parent?.insertBefore(last!, first!);
+   
+  }
 
-  }
-  
-  showMenu(event: any) {
-    event.preventDefault();
-    this.parent?.style.display  == 'block' ? this.parent.style.display = 'none': this.parent!.style.display = 'block';
-  }
-  
   onClick(event: any) {
     event.preventDefault();
     let parent = document.querySelectorAll('.list-item');
@@ -64,4 +64,5 @@ export class NavbarBottomComponent implements OnInit {
   }
 
 }
+
 
