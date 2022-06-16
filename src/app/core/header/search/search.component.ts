@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormGroup, FormControl} from '@angular/forms';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
@@ -13,11 +13,10 @@ import { HeaderService } from '../../service/header.service';
 })
 export class SearchComponent implements OnInit {
 
+  @Output() searchValue = new EventEmitter();
 
   forecast?: IForecast;
   currentLocation?: ILocation;
-  loc?: string | null;
-
 
   form = new FormGroup({
     location: new FormControl(null)
@@ -37,13 +36,9 @@ export class SearchComponent implements OnInit {
   }
 
   onSearch() {
-    this.loc = this.form.get('location')!.value;
-    this.sForecast.getCurrentLocationForecast(this.loc)
-        .subscribe(
-        res => {
-        this.forecast = res;
-        this.sHeader.createNavbarForecast(this.forecast!);
-    });
+    const loc = this.form.get('location')!.value;
+    this.searchValue.emit(loc);
   }
 
 }
+
