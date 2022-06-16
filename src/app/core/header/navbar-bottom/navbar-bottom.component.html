@@ -2,28 +2,23 @@
     <div class="arrows" *ngIf="isVisibleArrows" (click)="backward()">
         <fa-icon [icon]="['fas', 'angle-left']"></fa-icon>
     </div>
-    
-    <div class="menu" *ngIf="isMenu">
-        <fa-icon [icon]="['fas', 'bars']" (click)="showMenu($event)"></fa-icon>
-    </div>
     <ul class="navbar-bottom--list" (click)="onClick($event)">
         <li id="ch-1" class="list-item">
-            <a href="">ДНЕС</a>
+            <a routerLink="/forecast/{{city}}/today">ДНЕС</a>
         </li>
         <li id="ch-2" class="list-item">
-            <a href="">ПОЧАСОВО</a>
+            <a routerLink="/forecast/{{city}}/today-by-hours">ПОЧАСОВО</a>
         </li>
         <li id="ch-3" class="list-item">
-            <a href="">СЕДМИЧНО</a>
+            <a routerLink="/forecast/{{city}}/week">СЕДМИЧНО</a>
         </li>
         <li id="ch-4" class="list-item">
-            <a href="">МЕСЕЧНО</a>
+            <a routerLink="/forecast/{{city}}/monthly">МЕСЕЧНО</a>
         </li>
         <li id="ch-5" class="list-item">
-            <a href="">КАЧЕСТВО НА ВЪЗДУХА</a>
+            <a routerLink="/forecast/air-quolity">КАЧЕСТВО НА ВЪЗДУХА</a>
         </li>
     </ul>
-    
     <div class="arrows" *ngIf="isVisibleArrows" (click)="forward()">
         <fa-icon [icon]="['fas', 'angle-right']"></fa-icon>
     </div>
