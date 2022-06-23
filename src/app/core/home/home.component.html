@@ -1,0 +1,11 @@
+<section>
+    <div class="forecast-wrapper">
+        <div class="forecast-card" *ngFor="let city of forecast">
+            <app-city [cityForecast]="city"></app-city>
+        </div>
+    </div>
+    <div class="astro-wrapper">
+        <app-astro></app-astro>
+    </div>
+    
+</section>
