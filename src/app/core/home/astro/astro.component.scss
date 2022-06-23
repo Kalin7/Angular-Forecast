@@ -1,3 +1,4 @@
+
 .astro-card {
     width: 100%;
     background-color: #fff;
@@ -57,12 +58,12 @@
     } 
     50% {
         top: -80px;
-        left: 100px; 
+        left: 50%; 
         opacity: 1
     }
     100% {
         top: 0px;
-        left: 200px;
+        left: 100%;
         opacity: 0;
     }
 }
@@ -75,12 +76,39 @@
     } 
     50% {
         top: -80px;
-        left: 80px; 
+        left: 50%; 
         opacity: 1
     }
     100% {
         top: 0px;
-        left: 160px;
+        left: 100%;
         opacity: 0;
     }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1200px){
+    .astro-card {
+        display: flex;
+        flex-wrap: wrap;
+        .astro-card--item {
+            flex: 0 0 35%;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .astro-card {
+        flex-direction: column;
+        justify-content: center;
+        gap: 0px;
+        .astro-card--item {
+            width: 100%;
+            line-height: 0.7;
+            font-size: clamp(14px, 5vw, 20px);
+        }
+        fa-icon {
+            display: none;
+        }
+    }
+
 }
