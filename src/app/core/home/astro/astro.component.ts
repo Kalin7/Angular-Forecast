@@ -34,7 +34,5 @@ export class AstroComponent implements OnInit {
   }
 
 }
-function faSunrise(faSunrise: any) {
-  throw new Error('Function not implemented.');
-}
+
 
