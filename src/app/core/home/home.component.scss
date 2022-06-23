@@ -20,3 +20,24 @@ section {
         margin: 20px auto;
     }
 }
+
+@media screen and(min-width: 769px) and (max-width: 1200px) {
+    .forecast-wrapper {
+        flex-direction: column;
+        width: 100%;
+        .forecast-card {
+            width: 100%;
+        }
+    }
+}
+
+@media  screen and(max-width:768px){
+    .forecast-wrapper {
+        flex-direction: column;
+        width: 100%;
+        .forecast-card {
+            flex-direction: row;
+            width: 100%;
+        }
+    }    
+}
