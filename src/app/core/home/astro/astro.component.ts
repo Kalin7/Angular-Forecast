@@ -29,7 +29,6 @@ export class AstroComponent implements OnInit {
   getAstro() {
     this.sAstro.getAstrology().subscribe((res) => {
       this.astro = res.astronomy;
-      console.log(this.astro);
     })
   }
 
