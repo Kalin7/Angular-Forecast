@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons'
+import { Observable } from 'rxjs';
 import { IAstroInfo } from '../../interfaces';
 import { AstroService } from '../../service/astro.service';
 
@@ -9,9 +10,9 @@ import { AstroService } from '../../service/astro.service';
   templateUrl: './astro.component.html',
   styleUrls: ['./astro.component.scss']
 })
-export class AstroComponent implements OnInit {
+export class AstroComponent{
 
-  astro?: IAstroInfo;
+  astro$!: Observable<IAstroInfo>;
   constructor(
     library: FaIconLibrary,
     private sAstro: AstroService,
@@ -20,18 +21,8 @@ export class AstroComponent implements OnInit {
       faSun,
       faMoon
     )
+    this.astro$ = this.sAstro.getAstrology();
    }
-
-  ngOnInit(): void {
-    this.getAstro();
-  }
-
-  getAstro() {
-    this.sAstro.getAstrology().subscribe((res) => {
-      this.astro = res.astronomy;
-    })
-  }
-
 }
 
 
