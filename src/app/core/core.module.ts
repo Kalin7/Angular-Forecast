@@ -9,7 +9,13 @@ import { SearchComponent } from './header/search/search.component';
 import { NavbarBottomComponent } from './header/navbar-bottom/navbar-bottom.component';
 import { MobileMenuComponent } from './header/mobile-menu/mobile-menu.component';
 import { RouterModule } from '@angular/router';
-
+import { HomeComponent } from './home/home.component';
+import { CityComponent } from './home/city/city.component';
+import { AstroComponent } from './home/astro/astro.component';
+import { SportsNewsComponent } from './home/sports-news/sports-news.component';
+import { CountryComponent } from './home/country/country.component';
+import { MapComponent } from './home/country/map/map.component';
+import { ForecastComponent } from './home/country/forecast/forecast.component';
 
 
 @NgModule({
@@ -19,6 +25,13 @@ import { RouterModule } from '@angular/router';
     SearchComponent,
     NavbarBottomComponent,
     MobileMenuComponent,
+    HomeComponent,
+    CityComponent,
+    AstroComponent,
+    SportsNewsComponent,
+    CountryComponent,
+    MapComponent,
+    ForecastComponent,
   ],
   imports: [
     CommonModule,
@@ -33,6 +46,12 @@ import { RouterModule } from '@angular/router';
     SearchComponent,
     NavbarBottomComponent,
     MobileMenuComponent,
+    AstroComponent,
+    CityComponent,
+    AstroComponent,
+    SportsNewsComponent,
+    CountryComponent,
+    MapComponent,
   ]
 })
 export class CoreModule { }
