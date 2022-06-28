@@ -53,14 +53,10 @@ section {
             }
         }
     }
+}
 
-    .details {
-        width: 60%;
-        height: 500px;
-        background-color: gray;
-        position: relative;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -130%);
-    }
+.details {
+    width: 81%;
+    background-color: gray;
+    margin: 20px auto;
 }
