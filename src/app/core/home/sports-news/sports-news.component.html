@@ -1,6 +1,6 @@
 <section>
     <h2>Спорт от Света</h2>
-    <div class="football-wrapper">
+    <div class="football-wrapper" *ngIf="!isVisibleDetails">
         <div class="football-card" *ngFor="let play of football$ | async">
             <div class="football-card--img">
                 <img src="../../../../assets/images/soccer-field.png">
@@ -11,7 +11,10 @@
                         <span class="first">Стадион</span>
                         <span>{{play.stadium}}</span>
                     </div>
-                    <div class="country" [routerLink]="['country', play.country]" (click)="show()">
+                    <div class="country" 
+                        [routerLink]="['country', play.country]"
+                        routerLinkActive="active" 
+                        (click)="show()">
                         <fa-icon [icon]="['fas', 'globe']"></fa-icon>
                         <span>{{play.country}}</span>
                     </div>
@@ -31,8 +34,8 @@
             </div>
         </div>    
     </div>
-    <div class="details" *ngIf="isVisibleDetails">
-        <button (click)="hide()">X</button>
-        <router-outlet></router-outlet>
-    </div>
 </section>
+<div class="details" *ngIf="isVisibleDetails">
+    <button (click)="hide()">X</button>
+    <router-outlet></router-outlet>
+</div>
