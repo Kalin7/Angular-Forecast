@@ -1,4 +1,4 @@
-<div class="wrapper" *ngIf="country">
+<div class="wrapper" *ngIf="country; else loader">
     <div class="iframe-wrapper">
         <app-map [country]="country"></app-map>
     </div>
@@ -29,4 +29,10 @@
         <app-forecast [capital]="country.capital"></app-forecast>
     </div>
 </div>
+<ng-template #loader>
+    <div>
+        Loading...
+        <fa-icon [icon]="['fas', 'spinner']"></fa-icon>
+    </div>
+</ng-template>
 
