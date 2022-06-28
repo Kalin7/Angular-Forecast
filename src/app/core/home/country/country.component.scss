@@ -1,0 +1,34 @@
+.wrapper {
+    width: 100%;
+    height: 499px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .iframe-wrapper,
+    .forecast-wrapper,
+    .country-details {
+        flex: 0 0 33%;
+        height: 450px;
+        border: 1px solid white;
+    }
+
+    .forecast-wrapper {
+        background-color: white;
+    }
+    .country-details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #1f1f1f;
+        > div {
+            flex: 0 0 50px;
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 600;
+            font-size: 16px;
+        }
+    }
+}

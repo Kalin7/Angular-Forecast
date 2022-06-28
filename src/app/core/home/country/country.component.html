@@ -1,0 +1,32 @@
+<div class="wrapper" *ngIf="country">
+    <div class="iframe-wrapper">
+        <app-map [country]="country"></app-map>
+    </div>
+    <div class="country-details">
+        <div>
+            Continent: {{country.continent}}
+        </div>
+        <div>
+            Country: {{country.name.common}} - {{country.flag}}
+        </div>
+        <div>
+            Capital: {{country.capital}} 
+        </div>
+        <div>
+            Area: {{country.area}} sqf
+        </div>
+        <div>
+            Population: {{country.population}} people
+        </div>
+        <div>
+            Telephone sufix: {{country.sufix.root}} {{country.sufix.sufixes}}
+        </div>
+        <div>
+            Timezone: {{country.timezones}}
+        </div>
+    </div>
+    <div class="forecast-wrapper">
+        <app-forecast [capital]="country.capital"></app-forecast>
+    </div>
+</div>
+
