@@ -4,12 +4,17 @@ import { CommonModule } from '@angular/common';
 import { FeatureRoutingModule } from './feature-routing.module';
 import { DailyComponent } from './daily/daily.component';
 import { HoursComponent } from './hours/hours.component';
+import { ForecastComponent } from './daily/forecast/forecast.component';
+import { AirComponent } from './daily/air/air.component';
 
 
 @NgModule({
   declarations: [
     DailyComponent,
-    HoursComponent
+    HoursComponent,
+    ForecastComponent,
+    AirComponent,
+
   ],
   imports: [
     CommonModule,
@@ -17,7 +22,10 @@ import { HoursComponent } from './hours/hours.component';
   ],
   exports: [
     DailyComponent,
-    HoursComponent
+    HoursComponent,
+    ForecastComponent,
+    AirComponent,
+
   ]
 })
 export class FeatureModule { }
