@@ -1,8 +1,9 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { IForecast } from 'src/app/core/interfaces';
 import { ForecastService } from 'src/app/core/service/forecast.service';
+import { HeaderService } from 'src/app/core/service/header.service';
 
 
 @Component({
@@ -10,39 +11,33 @@ import { ForecastService } from 'src/app/core/service/forecast.service';
   templateUrl: './daily.component.html',
   styleUrls: ['./daily.component.scss']
 })
-export class DailyComponent implements OnInit, OnDestroy {
+export class DailyComponent implements OnInit {
 
-  forecast!: IForecast;
+  forecast$!: Observable<IForecast>;
   location: string = 'auto:ip';
-  airQualityIndex?: string;
-  airQualityText?: string;
-  subscriber?: Subscription;
+
   constructor(
     private sForecast: ForecastService,
     private router: ActivatedRoute,
+    private sHeader: HeaderService
   ) { }
 
   ngOnInit(): void {
-    this.getForecast();
     this.location = this.router.snapshot.params['city'];
+    this.getForecast();
+    
   }
 
-  getForecast() {
-    this.subscriber = this.sForecast.getCurrentLocationForecast(this.location)
-        .subscribe((res) => {
-          this.forecast = res;
-          this.getAirQuality(res);
-        });
+  @HostListener('window:click')
+  getChangedLocation() {
+    this.location = this.sHeader.cityName!;
+    this.getForecast();
   }
   
-  getAirQuality(forecast: IForecast) {
-    this.airQualityIndex = (forecast.current.air_quality['us-epa-index']).toString();
-    const air: any = this.sForecast.airQualityCode();
-    this.airQualityText = air[this.airQualityIndex];
+  getForecast() {
+    this.forecast$ = this.sForecast.getCurrentLocationForecast(this.location)
   }
 
-  ngOnDestroy() {
-    this.subscriber?.unsubscribe();
-  }
 }
+
 
