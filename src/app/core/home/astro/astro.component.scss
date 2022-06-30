@@ -1,0 +1,119 @@
+$radius: 3px;
+.astro-card {
+    width: 100%;
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    border-radius: $radius;
+    .astro-card--item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-weight: 600;
+        font-size: 20px;
+    }
+    .item-sun {
+        color: #e0c40b;
+        font-size: 36px;
+    }
+
+    .sunrise {
+        position: relative;
+        top: 0px;
+        left: 0px;
+        animation-name: sunrise;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+
+    .sunset,
+    .moonset {
+        opacity: 0;
+    }
+
+    .moonrise {
+        position: relative;
+        top: 0px;
+        left: 0px;
+        animation-name: moonrise;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+
+    .item-moon {
+        color: rgb(246, 163, 10);
+        font-size: 36px;
+    }
+}
+
+.astro-card:hover {
+    background-color: #1f1f1f;
+    color: #fff;
+}
+
+@keyframes sunrise {
+    0% {
+        left: 0px;
+        top: 0px;
+        opacity: 0;
+    } 
+    50% {
+        top: -80px;
+        left: 50%; 
+        opacity: 1
+    }
+    100% {
+        top: 0px;
+        left: 100%;
+        opacity: 0;
+    }
+}
+
+@keyframes moonrise {
+    0% {
+        left: 0px;
+        top: 0px;
+        opacity: 0;
+    } 
+    50% {
+        top: -80px;
+        left: 50%; 
+        opacity: 1
+    }
+    100% {
+        top: 0px;
+        left: 100%;
+        opacity: 0;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1200px){
+    .astro-card {
+        display: flex;
+        flex-wrap: wrap;
+        .astro-card--item {
+            flex: 0 0 35%;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .astro-card {
+        flex-direction: column;
+        justify-content: center;
+        gap: 0px;
+        .astro-card--item {
+            width: 100%;
+            line-height: 0.7;
+            font-size: clamp(14px, 5vw, 20px);
+        }
+        fa-icon {
+            display: none;
+        }
+    }
+
+}

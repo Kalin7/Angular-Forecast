@@ -1,0 +1,67 @@
+section {
+    $radius: 3px;
+    width: 100%;
+    h2, h3 {
+        width: 81%;
+        margin: 0 auto;
+        background-color: white;
+    }
+    h3 {
+        text-align: center;
+    }
+    img {
+        width: 150px;
+        height: 150px;
+        rotate: 90deg;
+    }
+    
+    .football-wrapper {
+        width: 81%;
+        border-radius: $radius;
+        background-color: white;
+        margin: 20px auto;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        .football-card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            flex: 0 0 30%;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            cursor: pointer;
+            
+            .card-item--details div{
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 20px;
+                fa-icon {
+                    font-size: 24px;
+                    color: #e0c40b;
+                }
+                
+            }
+            .first {
+                text-transform: uppercase;
+                background-color: #78b9eb;
+            }
+        }
+        .football-card:hover {
+            background-color: #1f1f1f;
+            color: #fff;
+        }
+    }
+}
+
+.details {
+    width: 81%;
+    background-color: gray;
+    margin: 20px auto;
+}

@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { map, Observable, of } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { IForecast } from '../interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +11,41 @@ export class ForecastService {
 
   url: string = environment.baseUrl;
   key: string = environment.secretKey;
-  autoLocation: string = 'auto:ip';
+  airQuality = [
+    {
+      level: 'Добро',
+      description: 'Качеството на въздуха е задоволително и наличието на замърсяване не крие риск за здравето',
+      color: 'green'
+    },
+    {
+      level: 'Умерено',
+      description: 'Качеството на въздуха е приемливо, но крие опастност за определени групи хора',
+      color: 'yellow'
+    },
+    { 
+      level: 'Нездравословно за определени групи',
+      description: 'Риск за определени групи с непоносимост към замърсявания',
+      color: 'orange'
+    },
+    {
+      level: 'Нездравословно',
+      description: 'Може да окаже влияние върху основната част от населението, \
+        хора от застрашените групи може да почустват сериозни здравословни проблеми',
+      color: 'red'
+    },
+    {
+      level: 'Много Нездравословно',
+      description: 'Предупреждение за опасност за здравето на всички хора',
+      color: 'purple'
+    },
+    {
+      level: 'Опасно',
+      description: 'Предупреждение за спешни случаи, всички биха били засегнати',
+      color: 'maroon'
+    }
+  ]
+
+  
 
   
   constructor(  
@@ -17,7 +53,16 @@ export class ForecastService {
   ) { }
 
   getCurrentLocationForecast(location: any) {
-    return this.http.get<any>(`${this.url}/current.json?key=${this.key}&q=${location ? location : this.autoLocation}`);
+    return this.http.get<any>(`${this.url}/current.json?key=${this.key}&q=${location}&aqi=yes&lang=bg`);
+  }
+
+
+  getMultipleCitiesForecast(city: string) {
+    return this.http.get<any>(`${this.url}/current.json?key=${this.key}&q=${city}&aqi=yes&lang=bg`);
+  }
+
+  airQualityCode(code: number) {
+    return this.airQuality[code - 1];
   }
 
 }

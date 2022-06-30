@@ -1,0 +1,4 @@
+<div class="wrapper" *ngIf="forecast$ | async as forecast">
+    <app-forecast [forecast]="forecast"></app-forecast>
+    <app-air [air]="forecast.current.air_quality"></app-air>
+</div>

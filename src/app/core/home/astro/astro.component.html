@@ -1,0 +1,32 @@
+<div class="astro-card" *ngIf="astro$ | async as a">
+    <div class="astro-card--item">
+        <p>Слънцето изгрява</p>
+        <fa-icon class="item-sun sunrise" [icon]="['fas', 'sun']"></fa-icon>
+        {{a.astronomy.astro.sunrise}}
+    </div>
+    <div class="astro-card--item">
+        <p>Слънцето залязва</p>
+        <fa-icon class="item-sun sunset" [icon]="['fas', 'sun']"></fa-icon>
+        {{a.astronomy.astro.sunset}}
+    </div>
+    <div class="astro-card--item">
+        <p>Луната изгрява</p>
+        <fa-icon class="item-moon moonrise" [icon]="['fas', 'moon']"></fa-icon>
+        {{a.astronomy.astro.moonrise}}
+    </div>
+    <div class="astro-card--item">
+        <p> Луната залязва</p>
+        <fa-icon class="item-moon moonset" [icon]="['fas', 'moon']"></fa-icon>
+        {{a.astronomy.astro.moonset}}
+    </div>
+    <div class="astro-card--item">
+        <p> Лунна Фаза </p>
+        <fa-icon class="item-moon" [icon]="['fas', 'moon']"></fa-icon>
+        {{a.astronomy.astro.moon_phase}}
+    </div>
+    <div class="astro-card--item">
+        <p> Лунна осветеност </p>
+        <fa-icon class="item-moon" [icon]="['fas', 'moon']"></fa-icon>
+        {{a.astronomy.astro.moon_illumination}}%
+    </div>
+</div>

@@ -7,10 +7,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CoreModule } from './core/core.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FeatureModule } from './feature/feature.module';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -19,6 +21,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     FontAwesomeModule,
     CoreModule,
+    FeatureModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,26 @@
+<div class="daily-card" *ngIf="forecast">
+    <h2>Времето в момента</h2>
+    <hr />
+    <time>{{forecast.location.localtime}}</time>
+    <div class="daily-card--forecast">
+        <div class="forecast-icon">
+            <img src="{{forecast.current.condition.icon}}" />
+        </div>
+        <div class="forecast-temp">
+            <span class="temp-cel">{{forecast.current.temp_c}}c&deg;</span>
+            <span class="temp-feel">RealFeel&reg;{{forecast.current.feelslike_c}}&deg;</span>
+        </div>
+        <div class="forecast-details">
+            <div class="wet">Влaжност {{forecast.current.humidity}}%</div>
+            <div class="line"></div>
+            <div class="wind">Вятър   {{forecast.current.wind_dir}} {{forecast.current.wind_kph}}КМ.</div>
+            <div class="line"></div>
+            <div class="wind-impulse">Пориви на вятъра {{forecast.current.wind_kph}}КМ.</div>
+        </div> 
+    </div>
+    <div class="daily-card--bottom">
+        <p class="condition-text">{{forecast.current.condition.text}}</p>
+        <a routerLink="/forecast/{{forecast.location.name}}/today/details">Подробни данни</a>
+    </div>
+    <hr class="bottom-hr"/>
+</div>

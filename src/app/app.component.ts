@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { IForecast } from './core/interfaces';
+import { ForecastService } from './core/service/forecast.service';
 
 @Component({
   selector: 'app-root',

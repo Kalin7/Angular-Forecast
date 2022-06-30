@@ -1,3 +1,4 @@
+
 export interface ILocation {
     city: string;
     country: string;
@@ -44,5 +45,116 @@ export interface IForecast {
         uv: number
         gust_mph: number,
         gust_kph: number
+        air_quality: {
+            co: number,
+            no2: number,
+            o3: number,
+            so2: number,
+            pm2_5: number,
+            pm10: number,
+            'us-epa-index': number,
+            "gb-defra-index": number
+        }
     }
+}
+
+
+
+export interface IAirQuality {
+    
+    co: number,
+    no2: number,
+    o3: number,
+    so2: number,
+    pm2_5: number,
+    pm10: number,
+    'us-epa-index': number,
+    "gb-defra-index": number
+    
+}
+
+export interface IAstroInfo {
+    astronomy: {
+        astro: {
+            sunrise: string,
+            sunset: string,
+            moonrise: string,
+            moonset: string,
+            moon_phase: string,
+            moon_illumination: string
+        }
+    }
+}
+
+
+export interface ISport {
+    football: [
+        {
+            stadium: string,
+            country: string,
+            region: string,
+            tournament: string,
+            start: string,
+            match: string
+        },
+    ],
+    cricket: [
+        {
+            stadium: string,
+            country: string,
+            region: string,
+            tournament: string,
+            start: string,
+            match: string
+        }
+    ],
+    golf: [
+        {
+            stadium: string,
+            country: string,
+            region: string,
+            tournament: string,
+            start: string,
+            match: string
+        }
+    ]
+}
+
+export interface IFootball {
+    football: [
+        {
+            stadium: string,
+            country: string,
+            region: string,
+            tournament: string,
+            start: string,
+            match: string
+        }
+    ]
+}
+
+
+export interface ICountry {
+    name: {
+        common: string
+        official: string
+    },
+    currencies: {
+            name: string
+            symbol: string
+    },
+    sufix: {
+        root: string
+        sufixes: string
+    }
+    capital: string
+    borders: string[]
+    area: number
+    maps: {
+        openStreetMaps: string
+    },
+    population: number
+    timezones: string
+    continent: string
+    flag: string
 }
