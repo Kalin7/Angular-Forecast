@@ -2,6 +2,7 @@
     <nav class="navbar-top">
         <div class="navbar-top--left">
             <div class="navbar-logo" routerLink="">
+            <div class="navbar-logo">
                 <fa-icon [icon]="['fas', 'sun']"></fa-icon>
                 <span class="logo-name">Forecast</span>
             </div>
@@ -18,3 +19,4 @@
         <app-mobile-menu *ngIf="isMobileMenu" [city]="currentCity"></app-mobile-menu>
     </nav>
 </section>
+

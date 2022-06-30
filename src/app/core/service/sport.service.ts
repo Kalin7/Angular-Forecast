@@ -4,6 +4,7 @@ import { map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { IFootball, ISport } from '../interfaces';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -19,5 +20,8 @@ export class SportService {
                       return sports.football
                     }))
   }
-
+  
+  getSports (): Observable<ISport> {
+    return this.http.get<ISport>(`${this.url}/sports.json?key=${this.key}&q=auto:ip`);
+  }
 }

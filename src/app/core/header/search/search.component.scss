@@ -40,4 +40,29 @@
             cursor: pointer;
         }
     }
+    .search-form {
+        width: 99%;
+        height: 24px;
+        form {
+            height: 24px;
+            display: flex;
+            align-items: center;
+        }
+        input {
+            width: 75%;
+            height: 24px;
+            border: none;
+        }
+        input:focus {
+            outline: none;
+        }
+        button {
+            margin-left: 10px;
+            width: 25%;
+            height: 24px;
+            background-color: #e0c40b;
+            border: none;
+            cursor: pointer;
+        }
+    }
 }

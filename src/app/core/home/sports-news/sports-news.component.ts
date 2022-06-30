@@ -31,11 +31,12 @@ export class SportsNewsComponent implements OnInit{
   ngOnInit(): void {
   }
 
-  show(): void {
-    this.isVisibleDetails = true;
+
+  show() {
+    this.isVisibleDetails = true
   }
-  hide(): void {
-    this.isVisibleDetails = false;
+  hide() {
+    this.isVisibleDetails = false
     this.router.navigate(['/forecast/home']);
   }
 }

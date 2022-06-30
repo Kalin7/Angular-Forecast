@@ -1,7 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faSun } from '@fortawesome/free-solid-svg-icons';
-import { Observable } from 'rxjs';
 import { IForecast, ILocation } from '../interfaces';
 import { ForecastService } from '../service/forecast.service';
 import { HeaderService } from '../service/header.service';

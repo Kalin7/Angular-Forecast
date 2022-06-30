@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IForecast, ISport } from '../interfaces';
+import { IForecast } from '../interfaces';
 import { ForecastService } from '../service/forecast.service';
 
 @Component({
@@ -28,5 +28,4 @@ export class HomeComponent implements OnInit {
       });
     });
   }
-
 }

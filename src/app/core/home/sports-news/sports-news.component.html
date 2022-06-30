@@ -5,6 +5,7 @@
         [routerLink]="['country', play.country]"
         routerLinkActive="active" 
         (click)="show()">
+        <div class="football-card" *ngFor="let play of football$ | async">
             <div class="football-card--img">
                 <img src="../../../../assets/images/soccer-field.png">
             </div>
@@ -15,6 +16,10 @@
                         <span>{{play.stadium}}</span>
                     </div>
                     <div class="country" >
+                    <div class="country" 
+                        [routerLink]="['country', play.country]"
+                        routerLinkActive="active" 
+                        (click)="show()">
                         <fa-icon [icon]="['fas', 'globe']"></fa-icon>
                         <span>{{play.country}}</span>
                     </div>

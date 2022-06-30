@@ -47,6 +47,7 @@ import { ForecastComponent } from './home/country/forecast/forecast.component';
     NavbarBottomComponent,
     MobileMenuComponent,
     HomeComponent,
+    AstroComponent,
     CityComponent,
     AstroComponent,
     SportsNewsComponent,
@@ -56,3 +57,4 @@ import { ForecastComponent } from './home/country/forecast/forecast.component';
   ]
 })
 export class CoreModule { }
+
