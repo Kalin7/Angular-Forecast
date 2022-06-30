@@ -58,7 +58,6 @@ export interface IForecast {
 }
 
 export interface IAirQuality {
-    
     co: number,
     no2: number,
     o3: number,
@@ -67,7 +66,6 @@ export interface IAirQuality {
     pm10: number,
     'us-epa-index': number,
     "gb-defra-index": number
-    
 }
 
 export interface IAstroInfo {

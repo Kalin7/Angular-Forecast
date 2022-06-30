@@ -9,7 +9,7 @@ import { ForecastService } from 'src/app/core/service/forecast.service';
 })
 export class AirComponent implements OnInit {
 
-  @Input() air!: IAirQuality
+  @Input() air!: any
   condition?: any;
 
   constructor(

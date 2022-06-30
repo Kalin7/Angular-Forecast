@@ -20,8 +20,4 @@ export class SportService {
                       return sports.football
                     }))
   }
-  
-  getSports (): Observable<ISport> {
-    return this.http.get<ISport>(`${this.url}/sports.json?key=${this.key}&q=auto:ip`);
-  }
 }
