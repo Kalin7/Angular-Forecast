@@ -1,0 +1,42 @@
+<div class="forecast-details--wrapper" *ngIf="forecastDetails$ | async as forecast">
+    <button routerLink="/forecast/{{forecast.location.name}}/today">x</button>
+    <div class="title">
+        <h2>Времето днес</h2>
+        <hr />
+    </div>
+    <div class="forecast-details--list"> 
+        <div class="list-item location">
+            <div>{{forecast.location.name}} - {{forecast.location.country}}</div>
+            <div>{{forecast.location.localtime}}</div>
+        </div>
+        <div class="list-item condition">
+            <div>{{forecast.current.condition.text}}</div>
+            <img src="{{forecast.current.condition.icon}}" alt="">
+            <div>{{forecast.current.temp_c}}&deg;c</div>
+        </div>
+        <div class="list-item current">
+            <div class="details"><span>RealFeel&reg;</span><span>{{forecast.current.feelslike_c}}&deg;c</span></div>
+            <div class="details"><span>Налягане</span> <span>{{forecast.current.pressure_mb}}хкп</span></div>
+            <div class="details"><span>Влажност</span> <span>{{forecast.current.humidity}}%</span></div>
+            <div class="details"><span>Вятър</span> <span>{{forecast.current.wind_kph}}км</span></div>
+            <div class="details"><span>Облачност</span> <span>{{forecast.current.cloud}}%</span></div>
+            <div class="details"><span>Видимост</span> <span>{{forecast.current.vis_km}}км</span></div>
+            <div class="details"><span>UV-Index</span> <span>{{forecast.current.uv}}</span></div>
+        </div>
+        <div class="list-item forecast-day"> 
+            <div class="details"><span>Дата </span><span>{{forecast.forecast.forecastday[0].date}}</span></div>
+            <div class="details"><span>Min &deg;c</span> <span>{{forecast.forecast.forecastday[0].day.mintemp_c}}&deg;c</span></div>
+            <div class="details"><span>Max &deg;c</span> <span>{{forecast.forecast.forecastday[0].day.maxtemp_c}}&deg;c</span></div>
+            <div class="details"><span>Вятър</span> <span>{{forecast.forecast.forecastday[0].day.maxwind_kph}}км</span></div>
+            <div class="details"><span>Дъжд</span> <span>{{forecast.forecast.forecastday[0].day.daily_chance_of_rain}}%</span></div>
+        </div>
+        <div class="list-item forecast-day--astro"> 
+            <div class="details"><span>Слънцето изгрява </span><span>{{forecast.forecast.forecastday[0].astro.sunrise}}</span></div>
+            <div class="details"><span>Слънцето залязва</span> <span>{{forecast.forecast.forecastday[0].astro.sunset}}</span></div>
+            <div class="details"><span>Луната изгрява</span> <span>{{forecast.forecast.forecastday[0].astro.moonrise}}</span></div>
+            <div class="details"><span>Луната залязва</span> <span>{{forecast.forecast.forecastday[0].astro.moonset}}</span></div>
+            <div class="details"><span>Лунна осветеност</span> <span>{{forecast.forecast.forecastday[0].astro.moon_illumination}}%</span></div>
+        </div>
+        <app-air [air]="forecast.current.air_quality"></app-air>
+    </div>
+</div>

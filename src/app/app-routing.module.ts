@@ -6,13 +6,13 @@ import { HomeComponent } from './core/home/home.component';
 
 const routes: Routes = [
   {
-    path: 'forecast/home', component: HomeComponent,
+    path: 'forecast/bg/home', component: HomeComponent,
     children: [
       {path: 'country/:name', component: CountryComponent},
     ]
   },
 
-  {path: '', redirectTo: '/forecast/home', pathMatch: 'full'},
+  {path: '', redirectTo: '/forecast/bg/home', pathMatch: 'full'},
   {
     path: 'forecast',
     loadChildren: () => import('./feature/feature-routing.module').then((m) => m.FeatureRoutingModule) 

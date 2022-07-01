@@ -37,7 +37,7 @@ export class SearchComponent implements OnInit {
     this.searchValue.emit(loc);
     this.sHeader.getLocation(loc!);
     this.form.reset();
-    this.router.navigate(['/forecast/home'])
+    this.router.navigate([`/forecast/${loc}/today`])
   }
 
 }

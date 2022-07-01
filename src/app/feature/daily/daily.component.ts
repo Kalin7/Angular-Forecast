@@ -13,8 +13,8 @@ import { ForecastService } from 'src/app/core/service/forecast.service';
 export class DailyComponent implements OnInit {
 
   forecast$!: Observable<IForecast>;
-  location: string = 'auto:ip';
-
+  location: string = 'Sofia';
+  
   constructor(
     private sForecast: ForecastService,
     private router: ActivatedRoute,

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { IForecast } from 'src/app/core/interfaces';
 
 @Component({
@@ -10,8 +11,9 @@ export class ForecastComponent implements OnInit {
 
   @Input() forecast?: IForecast
   @Input() text?: string
-  
-  constructor() { }
+
+  constructor(
+  ) { }
 
   ngOnInit(): void {
   }

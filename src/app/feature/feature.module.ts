@@ -8,6 +8,7 @@ import { ForecastComponent } from './daily/forecast/forecast.component';
 import { AirComponent } from './daily/air/air.component';
 import { PollutantsComponent } from './daily/air/pollutants/pollutants.component';
 import { ScaleComponent } from './daily/air/scale/scale.component';
+import { DetailsComponent } from './daily/details/details.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { ScaleComponent } from './daily/air/scale/scale.component';
     AirComponent,
     PollutantsComponent,
     ScaleComponent,
+    DetailsComponent,
   ],
   imports: [
     CommonModule,
@@ -29,7 +31,8 @@ import { ScaleComponent } from './daily/air/scale/scale.component';
     ForecastComponent,
     AirComponent,
     PollutantsComponent,
-    ScaleComponent
+    ScaleComponent,
+    DetailsComponent
   ]
 })
 export class FeatureModule { }

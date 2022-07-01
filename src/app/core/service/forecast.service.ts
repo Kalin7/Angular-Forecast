@@ -61,6 +61,10 @@ export class ForecastService {
     return this.http.get<any>(`${this.url}/current.json?key=${this.key}&q=${city}&aqi=yes&lang=bg`);
   }
 
+  getFullForecastDetails(city: string) {
+    return this.http.get<any>(`${this.url}/forecast.json?key=${this.key}&q=${city}&aqi=yes&lang=bg&alerts=yes`)
+  }
+
   airQualityCode(code: number) {
     return this.airQuality[code - 1];
   }
