@@ -1,0 +1,25 @@
+.air-pollutants--scale {
+    display: flex;
+    flex-direction: column;
+    .scale-items {
+        flex: 0 0 100px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        .item {
+            flex: 0 0 45%;
+            padding: 20px 20px;
+        }
+        .item-level {
+            border-bottom: 2px solid;
+            border-bottom-width: 50%;
+        }
+        .item-description {
+            border-left: 1px solid #fff;
+            border-right: 1px solid #fff;
+            border-radius: 20px;
+            text-align: center;
+        }
+    }
+}

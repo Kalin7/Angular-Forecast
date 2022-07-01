@@ -1,0 +1,6 @@
+<div class="air-pollutants--scale">
+    <div class="scale-items" *ngFor="let item of scale$ | async">
+        <div class="item item-level" [ngStyle]="{'border-bottom-color': item.color}">{{item.level}}</div>
+        <div class="item item-description">{{item.description}}</div>
+    </div>
+</div>

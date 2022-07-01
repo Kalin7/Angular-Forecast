@@ -14,41 +14,15 @@
     </div>
     <hr class="bottom-hr"/>
     <div class="air-pollutants">
-        <div class="air-pollutants--titles">
-            <a routerLink="" routerLinkActive="active">Замърсители</a>
-            <a routerLink="" routerLinkActive="active">Допустими граници</a>
+        <div class="air-pollutants--titles" (click)="show($event)">
+            <span id="one" class="title-border">Замърсители</span>
+            <span id="two">Допустими граници</span>
         </div>
-        <div class="air-pollutants--list">
-            <div class="list-item">
-                <div class="list-item--sym">CO</div> 
-                <div class="list-item--description">Вдишването на достатъчно голямо количество на <b>Въглероден оксид</b> води до задушаване и може да причини смърт</div>
-                <div class="list-item--val">{{(air.co).toFixed(2)}}&#181;g/m3</div>
-            </div>
-            <div class="list-item">
-                <div class="list-item--sym">CO2</div>
-                <div class="list-item--description">Когато <b>Въглероден двуоксид</b> се вдиша във високи концентрации (повече от 5% обемни), води моментално до опасност за живота и здравето на животните и хората.</div>
-                <div class="list-item--val">{{(air.co).toFixed(2)}}&#181;g/m3</div>
-            </div>
-            <div class="list-item">
-                <div class="list-item--sym">NO2</div>
-                <div class="list-item--description">При дълго вдишване на <b>Азотен Диоксид</b> повишава риска от респираторни заболявания, причинава кашлица и затруднено дишане</div>
-                <div class="list-item--val">{{(air.no2).toFixed(2)}}&#181;g/m3</div>
-            </div>
-            <div class="list-item">
-                <div class="list-item--sym">O3</div>
-                <div class="list-item--description"><b>Озонът</b> може да причини респираторни заболявания, възпаление на гърлото, главоболие и болки в гърдите</div>
-                <div class="list-item--val">{{(air.o3).toFixed(2)}}&#181;g/m3</div>
-            </div>
-            <div class="list-item">
-                <div class="list-item--sym">PM2.5</div>
-                <div class="list-item--description">При вдишване <b>Финните прахови частици</b> с диаметър до 2.5 микрона могат да причинят здравословни проблеми</div>
-                <div class="list-item--val">{{(air.pm2_5).toFixed(2)}}&#181;g/m3</div>
-            </div>
-            <div class="list-item">
-                <div class="list-item--sym">PM10</div>
-                <div class="list-item--description">При вдишване <b>Финните прахови частици</b> с диаметър до 10 микрона могат да причинят възпаление на очите и гърлото, кашлица, затруднено дишане</div>
-                <div class="list-item--val">{{(air.pm10).toFixed(2)}}&#181;g/m3</div>
-            </div>
+        <div *ngIf="!isScaleVisible">
+            <app-pollutants [pollutants]="air"></app-pollutants>
+        </div>
+        <div *ngIf="isScaleVisible">
+            <app-scale></app-scale>
         </div>
     </div>
     <hr/>
