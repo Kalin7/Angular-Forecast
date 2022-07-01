@@ -21,7 +21,6 @@ export class DetailsComponent implements OnInit {
   ngOnInit(): void {
     this.city = this.route.snapshot.params['city'];
     this.forecastDetails$ = this.sForecast.getFullForecastDetails(this.city!);
-    this.forecastDetails$.subscribe(res => console.log(res))
   }
 
 }
