@@ -1,7 +1,6 @@
 <div class="daily-card" *ngIf="cityForecast">
     <h2>Времето в момента</h2>
     <span>{{cityForecast.location.name}}</span>
-    <h2>Времето в момента {{cityForecast.location.name}}</h2>
     <div class="daily-card--cityForecast">
         <div class="cityForecast-icon">
             <img src="{{cityForecast.current.condition.icon}}" />

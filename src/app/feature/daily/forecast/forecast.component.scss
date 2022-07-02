@@ -4,7 +4,7 @@ h2 {
     font-size: 16px;
     font-weight: 500;
 }
-time {
+.time {
     width: 100%;
     font-weight: 600;
     color: #656565;
@@ -16,14 +16,14 @@ time {
     justify-content: center;
     gap: 20px;
     .forecast-icon img{
-        width: 100px;
-        height: 100px;           
+        width: clamp(75px, 5vw, 150px);
+        height: clamp(75px, 5vw, 150px);         
     }
     .forecast-temp {
         display: flex;
         flex-direction: column;
         .temp-cel {
-            font-size: 58px;
+            font-size: clamp(1.5rem, 2.5vw, 4rem); 
         }
     }
 
@@ -41,12 +41,24 @@ time {
 }
 
 .daily-card--bottom {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    width: 180px;
+    margin: 10px auto;
+    padding: 10px 0px;
+    a {
+        padding: 10px;
+        background-color: #1f1f1f;
+        color: #fff;
+        border-radius: 3px;
+    }
 }
 
 .bottom-hr {
     margin: 0 auto;
     width: 50%;
+}
+
+@media screen and (max-width: 768px){
+    .daily-card--forecast {
+        flex-direction: column;
+    }
 }

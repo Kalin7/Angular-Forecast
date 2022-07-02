@@ -1,7 +1,7 @@
 <div class="daily-card" *ngIf="forecast">
     <h2>Времето в момента</h2>
     <hr />
-    <time>{{forecast.location.localtime}}</time>
+    <div class="time">{{forecast.location.localtime}} {{forecast.current.condition.text}}</div>
     <div class="daily-card--forecast">
         <div class="forecast-icon">
             <img src="{{forecast.current.condition.icon}}" />
@@ -19,7 +19,6 @@
         </div> 
     </div>
     <div class="daily-card--bottom">
-        <p class="condition-text">{{forecast.current.condition.text}}</p>
         <a routerLink="/forecast/{{forecast.location.name}}/today/details">Подробни данни</a>
     </div>
     <hr class="bottom-hr"/>

@@ -9,6 +9,7 @@
         flex-direction: column;
         .menu-button {
             width: 100%;
+            cursor: pointer;
         }
         .menu-list {
             width: 80%;
@@ -24,6 +25,13 @@
                 text-align: center;
                 margin: 10px 0px;
             }
+            a:hover {
+                padding: 5px 0px;
+                background-color: #ebebeb;
+                border: 1px solid #1f1f1f;
+                border-radius: 3px;
+            }
+
         }
     }
 }

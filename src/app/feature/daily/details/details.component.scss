@@ -7,7 +7,7 @@
         width: 100%;
         margin: 0 auto;
         h2 {
-            font-size: 16px;
+            font-size: clamp(16px, 16px, 16px);
             font-weight: 500;
             text-transform: uppercase;
         }
@@ -19,7 +19,7 @@
         justify-content: center;
         gap: 10px;
         .list-item {
-            width: 50%;
+            width: min(600px, 80%);
             padding: 10px 0px;
             font-size: 20px;
             border-bottom: 1px solid #1f1f1f;
@@ -32,5 +32,12 @@
             justify-content: space-between;
             gap: 10px;
         }
+    }
+}
+
+@media screen and (max-width: 768px){
+    .location,
+    .condition {
+        flex-direction: column;
     }
 }

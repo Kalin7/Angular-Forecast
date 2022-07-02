@@ -1,1 +1,24 @@
-<p>hours works!</p>
+<div class="wrapper">
+    <h2>{{city}} Прогноза почасово</h2>
+    <hr />
+    <div class="hour-card" *ngFor="let forecast of hoursForecast$ | async">
+        <div class="time">{{forecast.time}} {{forecast.condition.text}}</div>
+        <div class="hour-card--forecast">
+            <div class="forecast-icon">
+                <img src="{{forecast.condition.icon}}" />
+            </div>
+            <div class="forecast-temp">
+                <span class="temp-cel">{{forecast.temp_c}}c&deg;</span>
+                <span class="temp-feel">RealFeel&reg;{{forecast.feelslike_c}}&deg;</span>
+            </div>
+            <div class="forecast-details">
+                <div class="presure">Налягане  {{forecast.pressure_mb}} хкп.</div>
+                <div class="line"></div>
+                <div class="wind">Вятър   {{forecast.wind_dir}} {{forecast.wind_kph}}КМ.</div>
+                <div class="line"></div>
+                <div class="wet">Влaжност {{forecast.humidity}}%</div>
+            </div> 
+        </div>
+        <hr class="bottom-hr"/>
+    </div>
+</div>

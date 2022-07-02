@@ -52,17 +52,24 @@ export class ForecastService {
     private http: HttpClient,
   ) { }
 
-  getCurrentLocationForecast(location: any) {
+  getCurrentLocationForecast(location: any): Observable<any> {
     return this.http.get<any>(`${this.url}/current.json?key=${this.key}&q=${location}&aqi=yes&lang=bg`);
   }
 
 
-  getMultipleCitiesForecast(city: string) {
+  getMultipleCitiesForecast(city: string): Observable<any>{
     return this.http.get<any>(`${this.url}/current.json?key=${this.key}&q=${city}&aqi=yes&lang=bg`);
   }
 
-  getFullForecastDetails(city: string) {
+  getFullForecastDetails(city: string): Observable<any>{
     return this.http.get<any>(`${this.url}/forecast.json?key=${this.key}&q=${city}&aqi=yes&lang=bg&alerts=yes`)
+  }
+
+  getHoursForecast(city: string): Observable<any>{
+    return this.http.get<any>(`${this.url}/forecast.json?key=${this.key}&q=${city}&lang=bg`)
+                    .pipe(map((res) => {
+                      return res.forecast.forecastday[0].hour;
+                    }))
   }
 
   airQualityCode(code: number) {
