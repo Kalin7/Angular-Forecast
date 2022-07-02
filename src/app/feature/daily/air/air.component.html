@@ -16,7 +16,7 @@
     <div class="air-pollutants">
         <div class="air-pollutants--titles" (click)="show($event)">
             <span id="one" class="title-border">Замърсители</span>
-            <span id="two">Допустими граници</span>
+            <span id="two">Скала на качеството</span>
         </div>
         <div *ngIf="!isScaleVisible">
             <app-pollutants [pollutants]="air"></app-pollutants>
