@@ -37,6 +37,6 @@ export class SportsNewsComponent implements OnInit{
   }
   hide() {
     this.isVisibleDetails = false
-    this.router.navigate(['/forecast/home']);
+    this.router.navigate(['/forecast/bg/home']);
   }
 }
