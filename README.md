@@ -31,4 +31,4 @@ There is no need for authorization
 
 ## Content and Views
 
-https://kalin7/github.io/Angular-Forecast/
+https://kalin7.github.io/Angular-Forecast/
