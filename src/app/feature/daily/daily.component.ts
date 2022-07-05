@@ -13,7 +13,7 @@ import { ForecastService } from 'src/app/core/service/forecast.service';
 export class DailyComponent implements OnInit {
 
   forecast$!: Observable<IForecast>;
-  location: string = 'Sofia';
+  location?: string;
   
   constructor(
     private sForecast: ForecastService,
@@ -21,7 +21,7 @@ export class DailyComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.location = this.router.snapshot.paramMap.get('city')!
+    this.location = this.router.snapshot.params['city'];
     this.getForecast();
   }
 

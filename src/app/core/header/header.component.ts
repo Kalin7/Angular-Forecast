@@ -1,5 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faSun } from '@fortawesome/free-solid-svg-icons';
 import { IForecast, ILocation } from '../interfaces';
@@ -24,7 +24,6 @@ export class HeaderComponent implements OnInit {
     library: FaIconLibrary,
     private sHeader: HeaderService,
     private sForecast: ForecastService,
-    private router: Router
   ) { 
     library.addIcons(
       faSun,

@@ -1,4 +1,5 @@
 <div class="wrapper">
+    <button (click)="close()">x</button>
     <h2>{{city}} Прогноза почасово</h2>
     <hr />
     <div class="hour-card" *ngFor="let forecast of hoursForecast$ | async">
