@@ -5,14 +5,10 @@
             routerLink="/forecast/bg/home/country/{{play.country}}"
             routerLinkActive="active" 
             (click)="show()">
-            <!-- <div class="football-card--img">
-                <img src="../../../../assets/images/soccer-field.png">
-            </div> -->
             <div class="card-item">
                 <div class="card-item--details">
                     <div class="stadium">
                         <img src="/assets/images/soccer-field.png">
-                        <!-- <span class="first">Стадион</span> -->
                         <span>{{play.stadium}}</span>
                     </div>
                     <div class="country" >
@@ -21,7 +17,6 @@
                     </div>
                     <div class="tournament">
                         <fa-icon [icon]="['fas', 'trophy']"></fa-icon>
-                        <!-- <span class="first">Турнир</span> -->
                         <span>{{play.tournament}}</span>
                     </div>
                     <div class="date">
@@ -29,7 +24,6 @@
                         <span>{{play.start}}</span>
                     </div>
                     <div class="teams">
-                        <!-- <span class="first">Отбори</span> -->
                         <fa-icon [icon]="['fas', 'people-group']"></fa-icon>
                         <span>{{play.match}}</span>
                     </div>
