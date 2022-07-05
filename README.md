@@ -26,6 +26,13 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
+## API's
+
+Free Weather Api at https://www.weatherapi.com
+Free RESTCountries Api at https://restcountries.com/
+
+Google Maps Embeded Api
+
 ## Authorization
 There is no need for authorization
 
