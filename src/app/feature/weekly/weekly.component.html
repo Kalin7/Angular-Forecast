@@ -45,5 +45,25 @@
                 <span>{{day.day.condition.text}}</span>
             </div>
         </div>
+        <div class="card-item astro sun">
+            <div>
+                <fa-icon [icon]="['fas', 'sun']"></fa-icon>
+                <span>{{day.astro.sunrise}}</span>
+            </div>
+            <div>
+                <fa-icon class="sunset" [icon]="['fas', 'sun']"></fa-icon>
+                <span>{{day.astro.sunset}}</span>
+            </div>
+        </div>
+        <div class="card-item astro moon">
+            <div>
+                <fa-icon [icon]="['fas', 'moon']"></fa-icon>
+                <span>{{day.astro.moonrise}}</span>
+            </div>
+            <div>
+                <fa-icon class="sunset" [icon]="['fas', 'moon']"></fa-icon>
+                <span>{{day.astro.moonset}}</span>
+            </div>
+        </div>
     </div>
 </div>

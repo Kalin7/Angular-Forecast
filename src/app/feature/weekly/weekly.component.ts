@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { faCloudRain, faDroplet, faEye, faRadiation, faTemperatureDown, faTemperatureUp, faWind } from '@fortawesome/free-solid-svg-icons';
+import { faCloudRain, faDroplet, faEye, faMoon, faRadiation, faSun, faTemperatureDown, faTemperatureUp, faWind } from '@fortawesome/free-solid-svg-icons';
 import { Observable } from 'rxjs';
 import { ForecastService } from 'src/app/core/service/forecast.service';
 
@@ -26,7 +26,9 @@ export class WeeklyComponent implements OnInit {
       faWind,
       faCloudRain,
       faEye,
-      faRadiation
+      faRadiation,
+      faSun,
+      faMoon
     )
    }
 
