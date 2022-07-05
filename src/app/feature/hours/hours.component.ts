@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { IHours } from 'src/app/core/interfaces';
 import { ForecastService } from 'src/app/core/service/forecast.service';
@@ -16,11 +16,15 @@ export class HoursComponent implements OnInit {
   constructor(
     private sForecast: ForecastService,
     private route: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
     this.city =  this.route.snapshot.params['city'];
     this.hoursForecast$ = this.sForecast.getHoursForecast(this.city!)
+  }
+  close() {
+    this.router.navigate(['']);
   }
 
 }
