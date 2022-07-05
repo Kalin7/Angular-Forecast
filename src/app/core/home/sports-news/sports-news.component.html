@@ -5,13 +5,14 @@
             routerLink="/forecast/bg/home/country/{{play.country}}"
             routerLinkActive="active" 
             (click)="show()">
-            <div class="football-card--img">
+            <!-- <div class="football-card--img">
                 <img src="../../../../assets/images/soccer-field.png">
-            </div>
+            </div> -->
             <div class="card-item">
                 <div class="card-item--details">
                     <div class="stadium">
-                        <span class="first">Стадион</span>
+                        <img src="../../../../assets/images/soccer-field.png">
+                        <!-- <span class="first">Стадион</span> -->
                         <span>{{play.stadium}}</span>
                     </div>
                     <div class="country" >
@@ -19,17 +20,19 @@
                         <span>{{play.country}}</span>
                     </div>
                     <div class="tournament">
-                        <span class="first">Турнир</span>
+                        <fa-icon [icon]="['fas', 'trophy']"></fa-icon>
+                        <!-- <span class="first">Турнир</span> -->
                         <span>{{play.tournament}}</span>
                     </div>
                     <div class="date">
                         <fa-icon [icon]="['fas', 'clock']"></fa-icon>
                         <span>{{play.start}}</span>
                     </div>
-                </div>
-                <div class="teams">
-                    <span class="first">Отбори</span>
-                    <span>{{play.match}}</span>
+                    <div class="teams">
+                        <!-- <span class="first">Отбори</span> -->
+                        <fa-icon [icon]="['fas', 'people-group']"></fa-icon>
+                        <span>{{play.match}}</span>
+                    </div>
                 </div>
             </div>
         </div>    

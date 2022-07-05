@@ -10,9 +10,9 @@
         text-align: center;
     }
     img {
-        width: 150px;
-        height: 150px;
-        rotate: 90deg;
+        width: 25px;
+        height: 25px;   
+        //rotate: 90deg;
     }
     .football-wrapper {
         width: 81%;
@@ -28,23 +28,24 @@
         .football-card {
             border: 1px solid #ccc;
             border-radius: 5px;
-            flex: 0 0 30%;
+            flex: 0 1 30%;
             display: flex;
             align-items: center;
             gap: 20px;
+            padding: 20px 20px;
             cursor: pointer;
             .card-item--details div{
                 width: 100%;
+                flex-shrink: 1;
                 display: flex;
                 flex-wrap: wrap;
                 align-items: center;
                 justify-content: flex-start;
-                gap: 20px;
-                fa-icon {
-                    font-size: 24px;
-                    color: #e0c40b;
-                }
-                
+                gap: 20px; 
+            }
+            fa-icon {
+                font-size: 24px;
+                color: #e0c40b;
             }
             .first {
                 text-transform: uppercase;
