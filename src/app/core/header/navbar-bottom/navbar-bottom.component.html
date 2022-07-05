@@ -10,13 +10,10 @@
             <a routerLink="/forecast/{{city}}/today-by-hours">ПОЧАСОВО</a>
         </li>
         <li id="ch-3" class="list-item">
-            <a routerLink="/forecast/{{city}}/week">СЕДМИЧНО</a>
-        </li>
-        <li id="ch-4" class="list-item">
-            <a routerLink="/forecast/{{city}}/monthly">МЕСЕЧНО</a>
+            <a routerLink="/forecast/{{city}}/weekly">ТРИДНЕВНА</a>
         </li>
         <li id="ch-5" class="list-item">
-            <a routerLink="/forecast/air-quolity">КАЧЕСТВО НА ВЪЗДУХА</a>
+            <a routerLink="/forecast/air-quolity">ПРЕДУПРЕЖДЕНИЯ</a>
         </li>
     </ul>
     <div class="arrows" *ngIf="isVisibleArrows" (click)="forward()">

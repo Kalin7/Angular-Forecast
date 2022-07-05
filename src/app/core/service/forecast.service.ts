@@ -62,14 +62,21 @@ export class ForecastService {
   }
 
   getFullForecastDetails(city: string): Observable<any>{
-    return this.http.get<any>(`${this.url}/forecast.json?key=${this.key}&q=${city}&aqi=yes&lang=bg&alerts=yes`)
+    return this.http.get<any>(`${this.url}/forecast.json?key=${this.key}&q=${city}&aqi=yes&lang=bg`);
   }
 
   getHoursForecast(city: string): Observable<any>{
     return this.http.get<any>(`${this.url}/forecast.json?key=${this.key}&q=${city}&lang=bg`)
                     .pipe(map((res) => {
                       return res.forecast.forecastday[0].hour;
-                    }))
+                    }));
+  }
+
+  getWeekForecast(city: string): Observable<any>{
+    return this.http.get<any>(`${this.url}/forecast.json?key=${this.key}&q=${city}&days=3&lang=bg`)
+                    .pipe(map((res) => {
+                      return res.forecast.forecastday;
+                    }));
   }
 
   airQualityCode(code: number) {
