@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { faClock, faGlobe, faTrophy, faPeopleGroup } from '@fortawesome/free-solid-svg-icons';
+import { faClock, faGlobe, faTrophy, faPeopleGroup, faFutbol } from '@fortawesome/free-solid-svg-icons';
 import { Observable } from 'rxjs';
 import { SportService } from '../../service/sport.service';
 
@@ -25,7 +25,8 @@ export class SportsNewsComponent implements OnInit{
         faGlobe,
         faClock,
         faTrophy,
-        faPeopleGroup
+        faPeopleGroup,
+        faFutbol
       )
       this.football$ = this.sSport.getSports();
      }
