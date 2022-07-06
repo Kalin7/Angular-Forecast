@@ -4,8 +4,11 @@
     </div>
     <div class="search-form">
         <form action="" method="get" [formGroup]="form" (ngSubmit)="onSearch()">
-            <input type="text" placeholder="Search" formControlName="location">
-            <button type="submit"></button>
+            <input type="text" placeholder="Search by city or country name" formControlName="location">
+            <p class="error" *ngIf="form.get('location')?.invalid && form.get('location')?.touched">
+                Моля въведете име на град или държава
+            </p>
+            <button [disabled]="!form.valid" type="submit"></button>
         </form>
     </div>
 </div>

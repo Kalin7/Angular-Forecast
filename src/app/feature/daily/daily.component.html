@@ -4,3 +4,4 @@
         <app-air [air]="forecast.current.air_quality"></app-air>
     </div>
 </div>
+<app-error *ngIf="errorHandler$ | async as error" [error]="error" [location]="location"></app-error>

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormGroup, FormControl} from '@angular/forms';
+import { FormGroup, FormControl, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
@@ -16,13 +16,13 @@ export class SearchComponent implements OnInit {
   @Output() searchValue = new EventEmitter();
  
   form = new FormGroup({
-    location: new FormControl(null)
+    location: new FormControl(null, [Validators.required, Validators.minLength(2)])
   });
   
   constructor(
     library: FaIconLibrary,
     private sHeader: HeaderService,
-    private router: Router
+    private router: Router,
   ) { 
     library.addIcons(
       faMagnifyingGlass,
@@ -37,7 +37,7 @@ export class SearchComponent implements OnInit {
     this.searchValue.emit(loc);
     this.sHeader.getLocation(loc!);
     this.form.reset();
-    this.router.navigate([`/forecast/${loc}/today`])
+    this.router.navigateByUrl(`/forecast/${loc}/today`);
   }
 
 }

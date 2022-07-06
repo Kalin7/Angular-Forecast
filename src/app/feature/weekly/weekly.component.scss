@@ -9,6 +9,9 @@
         display: flex;
         align-items: center;
         gap: 20px;
+        .card-item {
+            flex: 0 1 25%;
+        }
         .card-item span {
             margin: 0px 10px;
         }
@@ -31,4 +34,11 @@
             opacity: 0.5;
         }
     }
+}
+
+@media screen and (max-width: 768px){
+    .forecast-card {
+        flex-direction: column;
+    }
+    
 }

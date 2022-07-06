@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
+import { catchError, Observable, of } from 'rxjs';
 import { IForecast } from 'src/app/core/interfaces';
 import { ForecastService } from 'src/app/core/service/forecast.service';
 
@@ -13,20 +13,23 @@ import { ForecastService } from 'src/app/core/service/forecast.service';
 export class DailyComponent implements OnInit {
 
   forecast$!: Observable<IForecast>;
+  errorHandler$? : Observable<any>;
   location?: string;
   
   constructor(
     private sForecast: ForecastService,
-    private router: ActivatedRoute,
-  ) { }
+    private route: ActivatedRoute,
+    private router: Router,
+  ) {}
 
   ngOnInit(): void {
-    this.location = this.router.snapshot.params['city'];
+    this.location = this.route.snapshot.params['city'];
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
     this.getForecast();
   }
 
   getForecast() {
-    this.forecast$ = this.sForecast.getCurrentLocationForecast(this.location)
+    this.forecast$ = this.sForecast.getCurrentLocationForecast(this.location);
+    this.errorHandler$ = this.forecast$.pipe(catchError((err) => of(err)))
   }
-
 }

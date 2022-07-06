@@ -39,6 +39,12 @@
             border: none;
             cursor: pointer;
         }
+        .error {
+            position: absolute;
+            top: 25%;
+            left: 51%;
+            color: #fff;
+        }
     }
     .search-form {
         width: 99%;

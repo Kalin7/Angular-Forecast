@@ -10,6 +10,7 @@ import { PollutantsComponent } from './daily/air/pollutants/pollutants.component
 import { ScaleComponent } from './daily/air/scale/scale.component';
 import { DetailsComponent } from './daily/details/details.component';
 import { WeeklyComponent } from './weekly/weekly.component';
+import { ErrorComponent } from './daily/error/error.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { WeeklyComponent } from './weekly/weekly.component';
     ScaleComponent,
     DetailsComponent,
     WeeklyComponent,
+    ErrorComponent,
   ],
   imports: [
     CommonModule,
