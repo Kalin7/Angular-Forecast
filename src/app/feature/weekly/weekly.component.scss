@@ -1,14 +1,14 @@
 .wrapper {
-    width: 81%;
+    width: 85%;
     margin: 20px auto;
-    font-size: 20px;
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
     .forecast-card {
         padding: 20px 20px;
         margin: 10px 0px;
         background-color: #fff;
         display: flex;
         align-items: center;
-        gap: 20px;
+        gap: clamp(5px, 1.5vw, 20px);
         .card-item {
             flex: 0 1 25%;
         }
@@ -23,15 +23,33 @@
                 width: clamp(75px, 5vw, 150px);
                 height: clamp(75px, 5vw, 150px);
             }
-            .hot {
-                color: #ff0000;
-            }
-            .cold {
-                color: #0000ff;
-            }
+        }
+        .hot {
+            color: #ff0000;
+        }
+        .cold,
+        .rain {
+            color: #0000ff;
+        }
+        .wind {
+            color: lightgray;
+        }
+        .eye {
+            color: lightgreen;
+        }
+        .radiation {
+            color: orange;
+        }
+        .sunrise,
+        .moonset {
+            color: rgb(255, 136, 0);
         }
         .sunset {
+            color:rgb(33, 20, 12);
             opacity: 0.5;
+        }
+        .moonrise {
+            color: lightgray;
         }
     }
 }
@@ -39,6 +57,10 @@
 @media screen and (max-width: 768px){
     .forecast-card {
         flex-direction: column;
+        .card-item {
+            width: 80%;
+            text-align: center;
+        }
     }
     
 }

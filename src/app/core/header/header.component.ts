@@ -1,5 +1,4 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faSun } from '@fortawesome/free-solid-svg-icons';
 import { IForecast, ILocation } from '../interfaces';

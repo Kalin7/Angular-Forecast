@@ -10,7 +10,7 @@ import { ForecastService } from '../service/forecast.service';
 export class HomeComponent implements OnInit {
 
   forecast: IForecast[] = [];
-  cities: string[] = ['Sofia', 'Plovdiv', 'Varna'];
+  cities: string[] = ['Burgas', 'Plovdiv', 'Varna'];
   
   constructor(
     private sForecast: ForecastService,
