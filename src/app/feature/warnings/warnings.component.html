@@ -1,0 +1,37 @@
+<div class="wrapper">
+    <div *ngIf="warnings$ | async as warnings; else loader">
+        <div *ngFor="let warning of warnings.alert">
+            <div>Източник {{warning.headline}}</div>
+            <div>Събитие {{warning.event}}</div>
+            <div>Съобщение {{warning.desc}}</div>
+            <div>Начало {{warning.effective}}</div>
+            <div>Край {{warning.expires}}</div>
+        </div>
+        <div class="empty" *ngIf="warnings.alert.length < 1">
+            <div>
+                <h2>Няма нялични предупреждения за опасно време в {{city}}</h2>
+            </div>
+            <div class="icons">
+                <div>
+                    <fa-icon class="cloud" [icon]="['fas', 'cloud']"></fa-icon>
+                    <fa-icon class="bolt" [icon]="['fas','bolt']"></fa-icon>
+                </div>
+                <div>
+                    <fa-icon class="cloud" [icon]="['fas', 'cloud']"></fa-icon>
+                    <fa-icon class="drop" [icon]="['fas', 'droplet']"></fa-icon>
+                    <fa-icon class="drop" [icon]="['fas', 'droplet']"></fa-icon>
+                    <fa-icon class="drop" [icon]="['fas', 'droplet']"></fa-icon>
+                </div>
+                <fa-icon class="sun" [icon]="['fas', 'sun']"></fa-icon>
+                <fa-icon [icon]="['fas', 'wind']"></fa-icon>
+                <fa-icon [icon]="['fas', 'radiation']"></fa-icon>
+            </div>
+        </div>
+    </div>
+    
+</div>
+<ng-template #loader>
+    <div>
+        Loading...
+    </div>
+</ng-template>

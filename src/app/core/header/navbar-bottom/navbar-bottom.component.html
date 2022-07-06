@@ -13,7 +13,7 @@
             <a routerLink="/forecast/{{city}}/weekly">ТРИДНЕВНА</a>
         </li>
         <li id="ch-5" class="list-item">
-            <a routerLink="/forecast/air-quolity">ПРЕДУПРЕЖДЕНИЯ</a>
+            <a routerLink="/forecast/{{city}}/warnings">ПРЕДУПРЕЖДЕНИЯ</a>
         </li>
     </ul>
     <div class="arrows" *ngIf="isVisibleArrows" (click)="forward()">

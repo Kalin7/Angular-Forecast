@@ -79,6 +79,13 @@ export class ForecastService {
                     }));
   }
 
+  getAlerts(city: string): Observable<any>{
+    return this.http.get<any>(`${this.url}/forecast.json?key=${this.key}&q=${city}&alerts=yes&lang=bg`)
+                    .pipe(map((res) => {
+                    return res.alerts;
+    }));
+  }
+
   airQualityCode(code: number) {
     return this.airQuality[code - 1];
   }

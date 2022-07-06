@@ -11,6 +11,7 @@ import { ScaleComponent } from './daily/air/scale/scale.component';
 import { DetailsComponent } from './daily/details/details.component';
 import { WeeklyComponent } from './weekly/weekly.component';
 import { ErrorComponent } from './daily/error/error.component';
+import { WarningsComponent } from './warnings/warnings.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { ErrorComponent } from './daily/error/error.component';
     DetailsComponent,
     WeeklyComponent,
     ErrorComponent,
+    WarningsComponent,
   ],
   imports: [
     CommonModule,
@@ -38,7 +40,9 @@ import { ErrorComponent } from './daily/error/error.component';
     PollutantsComponent,
     ScaleComponent,
     DetailsComponent,
-    WeeklyComponent
+    WeeklyComponent,
+    ErrorComponent,
+    WarningsComponent
   ]
 })
 export class FeatureModule { }

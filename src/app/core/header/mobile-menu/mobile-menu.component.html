@@ -3,10 +3,10 @@
     <div class="menu-button" (click)="showMenu()">
         <fa-icon [icon]="['fas', 'bars']"></fa-icon>
     </div>
-    <div class="menu-list" *ngIf="isShow">
+    <div class="menu-list" *ngIf="isShow" (click)="showMenu()">
         <a routerLink="/forecast/{{city}}/today">ДНЕС</a>
         <a routerLink="/forecast/{{city}}/today-by-hours">ПОЧАСОВО</a>
         <a routerLink="/forecast/{{city}}/weekly">ТРИДНЕВНА</a>
-        <a routerLink="/forecast/air-quolity">ПРЕДУПРЕЖДЕНИЯ</a>
+        <a routerLink="/forecast/{{city}}/warnings">ПРЕДУПРЕЖДЕНИЯ</a>
     </div>
 </div>
