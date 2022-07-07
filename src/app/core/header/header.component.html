@@ -14,8 +14,8 @@
         </div>
     </div>
     <nav class="navbar-bottom">
-        <app-navbar-bottom *ngIf="!isMobileMenu" [city]="currentCity"></app-navbar-bottom>
-        <app-mobile-menu *ngIf="isMobileMenu" [city]="currentCity"></app-mobile-menu>
+        <app-navbar-bottom *ngIf="!isMobileMenu" [city]="currentCity" [country]="country"></app-navbar-bottom>
+        <app-mobile-menu *ngIf="isMobileMenu" [city]="currentCity" [country]="country"></app-mobile-menu>
     </nav>
 </div>
 

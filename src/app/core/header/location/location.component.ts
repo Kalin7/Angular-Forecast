@@ -13,7 +13,6 @@ export class LocationComponent implements OnInit {
   @Input() currentLocation?: ILocation;
   
   constructor(
-    
   ) { }
   
   ngOnInit(): void {

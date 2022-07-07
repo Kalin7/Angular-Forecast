@@ -15,6 +15,7 @@ export class NavbarBottomComponent implements OnInit {
   parent!: HTMLElement | null; 
   
   @Input() city?: string;
+  @Input() country?: string;
   
   constructor(
     library: FaIconLibrary

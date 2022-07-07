@@ -5,6 +5,7 @@ import { faBolt, faCloud, faCloudRain, faCloudSunRain, faDroplet, faRadiation, f
 import { Observable } from 'rxjs';
 import { IAlerts } from 'src/app/core/interfaces';
 import { ForecastService } from 'src/app/core/service/forecast.service';
+import { HeaderService } from 'src/app/core/service/header.service';
 
 @Component({
   selector: 'app-warnings',
@@ -14,10 +15,12 @@ import { ForecastService } from 'src/app/core/service/forecast.service';
 export class WarningsComponent implements OnInit {
 
   warnings$!: Observable<IAlerts>
-  city?: string
+  country?: string;
+
   constructor(
     library: FaIconLibrary,
     private sForecast: ForecastService,
+    private sHeader: HeaderService,
     private route: ActivatedRoute,
   ) { 
     library.addIcons(
@@ -34,9 +37,8 @@ export class WarningsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.city = this.route.snapshot.params['city'];
-    this.warnings$ = this.sForecast.getAlerts(this.city!);
-    this.warnings$.subscribe(res => console.log(res))
+    this.sHeader.country ? this.country = this.sHeader.country : this.country = this.route.snapshot.params['country'];
+    this.warnings$ = this.sForecast.getAlerts(this.country!);
   }
 
 }

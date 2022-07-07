@@ -13,6 +13,7 @@ export class MobileMenuComponent implements OnInit {
   isShow: boolean = false;
   
   @Input() city?: string;
+  @Input() country?: string;
 
   constructor(
     library: FaIconLibrary

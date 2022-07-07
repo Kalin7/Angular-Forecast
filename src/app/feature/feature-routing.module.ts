@@ -12,7 +12,7 @@ const routes: Routes = [
   {path: ':city/today/details', component: DetailsComponent},  
   {path: ':city/today-by-hours', component: HoursComponent},
   {path: ':city/weekly', component: WeeklyComponent},
-  {path: ':city/warnings', component: WarningsComponent}
+  {path: ':country/warnings', component: WarningsComponent}
  
 ];
 

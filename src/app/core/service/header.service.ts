@@ -8,6 +8,7 @@ import { IForecast, ILocation } from '../interfaces';
 export class HeaderService {
 
   cityName?: string = 'Sofia';
+  country?: string;
   forecast?: IForecast;
   
   constructor(

@@ -1,6 +1,38 @@
 .wrapper {
     width: 81%;
     margin: 20px auto;
+    .warning-card {
+        width: 100%;
+        .warning-card--list {
+            padding: 20px 20px;
+            margin-top: 20px;
+            background-color: #fff;
+            .list-item {
+                margin: 10px 10px;
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                .title {
+                    flex: 0 1 10%;
+                    background-color: #e0c40b;
+                    border-radius: 3px;
+                    text-transform: uppercase;
+                    text-align: center;
+                }
+                .text {
+                    flex: 0 1 80%;
+                    padding: 10px 10px;
+                    border: 1px solid #1f1f1f;
+                    border-radius: 3px;
+                }
+                .text:hover {
+                    background-color: #1f1f1f;
+                    color: #fff;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
     .empty {
         width: min(900px, 100%);
         margin: 0px auto;
@@ -65,6 +97,12 @@
 }
 
 @media  screen and (max-width: 768px){
+    .wrapper {
+        width: 98%;
+    }
+    .list-item {
+        flex-direction: column;
+    }
     h2 {
         text-align: none;
         word-wrap: wrap;
@@ -75,5 +113,6 @@
         align-items: center;
         justify-content: center;
         gap: 50px;
+        z-index: -1;
     }
 }

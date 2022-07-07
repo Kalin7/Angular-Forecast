@@ -42,7 +42,7 @@ import { WarningsComponent } from './warnings/warnings.component';
     DetailsComponent,
     WeeklyComponent,
     ErrorComponent,
-    WarningsComponent
+    WarningsComponent,
   ]
 })
 export class FeatureModule { }
